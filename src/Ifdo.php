@@ -3,29 +3,35 @@ namespace Biigle\IfdoParser;
 
 class Ifdo
 {
-    private $jsonStr = "";
     private $jsonArr = [];
     private $validator;
     private $debug = false;
 
     const AVAILABLE_VERSIONS = ['v2.0.0', 'v2.0.1', 'v2.1.0'];
 
-    public static function fromFile($path): Ifdo
+    public static function fromFile($path, $strict = false): Ifdo
     {
         $data = file_get_contents($path);
 
         return Ifdo::fromString($data);
     }
 
-    public static function fromString($data): Ifdo
+    public static function fromString($data, $strict = false): Ifdo
     {
         return new Ifdo($data, true);
     }
 
-    public function __construct($json)
+    public function __construct($json, $strict = false)
     {
-        $this->jsonStr = $json;
         $this->jsonArr = json_decode($json, true);
+
+        if ($strict)
+        {
+            if ( ! $this->isValid())
+            {
+                throw new \Exception("Malformed document. See \$obj->getErrors() for more details.");
+            }
+        }
     }
 
     public function getValidator()
@@ -37,11 +43,11 @@ class Ifdo
         return $this->validator;
     }
 
-    public function revalidate()
+    public function revalidate(): void
     {
         $this->validator = new \JsonSchema\Validator;
         $version         = $this->getIfdoVersion();
-        $decoded         = json_decode($this->jsonStr);
+        $decoded         = json_decode($this->toString());
         $this->validator->validate($decoded, (object) ['$ref' => 'file://' . realpath("assets/ifdo-$version.json")]);
 
         if ($this->getDebug() && ! empty($this->getErrors()))
@@ -76,17 +82,41 @@ class Ifdo
 
     public function getImageSetHeader()
     {
-        return $this->getJsonData()['image-set-header'];
+        $arr = $this->getJsonData();
+        if (array_key_exists('image-set-header', $arr))
+        {
+            return $arr['image-set-header'];
+        }
+        else
+        {
+            return [];
+        }
     }
 
     public function getImageSetItems()
     {
-        return $this->getJsonData()['image-set-items'];
+        $arr = $this->getJsonData();
+        if (array_key_exists('image-set-items', $arr))
+        {
+            return $arr['image-set-items'];
+        }
+        else
+        {
+            return [];
+        }
     }
 
-    public function getIfdoVersion(): string
+    public function getIfdoVersion(): String
     {
-        $dataVersion = $this->getImageSetHeader()['image-set-ifdo-version'];
+        if (array_key_exists('image-set-items', $this->getImageSetHeader()))
+        {
+            $dataVersion = $this->getImageSetHeader()['image-set-ifdo-version'];
+        }
+        else
+        {
+            $dataVersion = "v2.1.0";
+        }
+
         if ( ! in_array($dataVersion, self::AVAILABLE_VERSIONS))
         {
             throw new \Exception("Unsupported iFDO version `$dataVersion`");
@@ -101,5 +131,10 @@ class Ifdo
         {
             printf("[%s] %s\n", $error['property'], $error['message']);
         }
+    }
+
+    public function toString(): String
+    {
+        return json_encode($this->getJsonData());
     }
 }
