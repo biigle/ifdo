@@ -77,12 +77,13 @@
             "image-datetime": "2019-03-04 08:37:24.000000",
             "image-altitude-meters": -4094.5,
             "image-entropy": 0.8174957092476102,
-            "image-hash": "83f30eb35d1325c44c85fba0cf478825c0a629d20177a945069934f6cd07e087",
+            "image-hash-sha256": "83f30eb35d1325c44c85fba0cf478825c0a629d20177a945069934f6cd07e087",
             "image-latitude": 11.9294422,
             "image-longitude": -117.0407515,
             "image-mpeg7-colorstatistic": [27.0, 255.0, 38.0, 255.0, 36.0, 255.0, 169.3751983642578, 211.97219848632812, 198.2913360595703, 25.55811309814453, 31.31110954284668, 37.18994140625, 177.0, 224.0, 212.0, 0.8022223711013794, 0.806853175163269, 0.8450505137443542],
             "image-pixel-per-millimeter": 1.177876563911506,
-            "image-uuid": "c6b8d981-05c7-449f-85a9-906ab866bfb6"
+            "image-uuid": "c6b8d981-05c7-449f-85a9-906ab866bfb6",
+            "image-handle": "https://example.com/c6b8d981-05c7-449f-85a9-906ab866bfb6"
         },
         "SO268-1_21-1_OFOS_SO_CAM-1_20190304_083734.JPG": {
             "image-area-square-meters": 29.6263,
@@ -90,11 +91,12 @@
             "image-datetime": "2019-03-04 08:37:34.000000",
             "image-altitude-meters": -4094.6,
             "image-entropy": 0.8340960692175852,
-            "image-hash": "819e1810dccd9025310d7841a994b94bcdc438ae74ec5095ce01f1bd46143c4e",
+            "image-hash-sha256": "819e1810dccd9025310d7841a994b94bcdc438ae74ec5095ce01f1bd46143c4e",
             "image-latitude": 11.9294418,
             "image-longitude": -117.040753,
             "image-pixel-per-millimeter": 1.0080566417738843,
-            "image-uuid": "daad4a74-5c16-49d0-9775-efa67f0459f4"
+            "image-uuid": "daad4a74-5c16-49d0-9775-efa67f0459f4",
+            "image-handle": "https://example.com/daad4a74-5c16-49d0-9775-efa67f0459f4"
         }
     }
 }

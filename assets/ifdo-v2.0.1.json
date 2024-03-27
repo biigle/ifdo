@@ -409,7 +409,8 @@
                 "image-area-square-meters": {
                     "description": "The footprint of the entire image in square meters",
                     "type": "number",
-                    "exclusiveMinimum": 0
+                    "exclusiveMinimum": true,
+                    "minimum": 0
                 },
                 "image-meters-above-ground": {
                     "description": "Distance of the camera to the seafloor in meters",
@@ -434,7 +435,8 @@
                 "image-overlap-fraction": {
                     "description": "The average overlap of two consecutive images i and j as the area images in both of the images (A_i * A_j) divided by the total area images by the two images (A_i + A_j - A_i * A_j): f = A_i * A_j / (A_i + A_j - A_i * A_j) -> 0 if no overlap. 1 if complete overlap",
                     "type": "number",
-                    "exclusiveMinimum": 0,
+                    "exclusiveMinimum": true,
+                    "minimum": 0,
                     "maximum": 1
                 },
                 "image-datetime-format": {
@@ -490,7 +492,8 @@
                         "viewport-thickness-millimeters": {
                             "description": "Thickness of viewport in millimeters",
                             "type": "number",
-                            "exclusiveMinimum": 0
+                            "exclusiveMinimum": true,
+                            "minimum": 0
                         },
                         "viewport-extra-description": {
                             "description": "A textual description of the viewport used",
@@ -505,7 +508,8 @@
                         "flatport-lens-port-distance-millimeters": {
                             "description": "The distance between the front of the camera lens and the inner side of the housing viewport in millimeters.",
                             "type": "number",
-                            "exclusiveMinimum": 0
+                            "exclusiveMinimum": true,
+                            "minimum": 0
                         },
                         "flatport-interface-normal-direction": {
                             "description": "3D direction vector to specify how the view direction of the lens intersects with the viewport (unit-less, (0,0,1) is aligned)",
