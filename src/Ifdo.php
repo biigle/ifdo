@@ -44,7 +44,7 @@ class Ifdo
 		$decoded         = json_decode($this->jsonStr);
 		$this->validator->validate($decoded, (object) ['$ref' => 'file://' . realpath("assets/ifdo-$version.json")]);
 
-		if ($this->getDebug())
+		if ($this->getDebug() && ! empty($this->getErrors()))
 		{
 			$this->printErrors();
 		}
