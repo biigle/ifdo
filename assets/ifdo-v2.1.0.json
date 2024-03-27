@@ -410,7 +410,7 @@
                     "description": "The footprint of the entire image in square meters",
                     "type": "number",
                     "exclusiveMinimum":true,
-                    "minimum": 0,
+                    "minimum": 0
                 },
                 "image-meters-above-ground": {
                     "description": "Distance of the camera to the seafloor in meters",
