@@ -24,12 +24,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Biigle\\IfdoParser\\": "src"
+            "Biigle\\Ifdo\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Biigle\\IfdoParser\\Tests\\": "tests"
+            "Biigle\\Ifdo\\Tests\\": "tests"
         }
     },
     "scripts": {

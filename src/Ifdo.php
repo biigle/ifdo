@@ -1,5 +1,6 @@
 <?php
-namespace Biigle\IfdoParser;
+
+namespace Biigle\Ifdo;
 
 class Ifdo
 {

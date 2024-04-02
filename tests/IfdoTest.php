@@ -1,7 +1,7 @@
 <?php
-namespace Biigle\IfdoParser\Tests;
+namespace Biigle\Ifdo\Tests;
 
-use Biigle\IfdoParser\Ifdo;
+use Biigle\Ifdo\Ifdo;
 use PHPUnit\Framework\TestCase;
 
 class IfdoTest extends TestCase
