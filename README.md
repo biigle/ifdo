@@ -1,6 +1,8 @@
 ### Usage
 
 ```php
+use Biigle\Ifdo\Ifdo;
+
 $path = __DIR__ . '/fixtures/ifdo-test-v2.0.0.json';
 $obj  = Ifdo::fromFile($path);
 
