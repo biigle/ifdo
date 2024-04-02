@@ -1,4 +1,14 @@
-### Usage
+# PHP iFDO
+
+A PHP package to read and validate [iFDO v2 files](https://marine-imaging.com/fair/ifdos/iFDO-overview/).
+
+## Installation
+
+```
+composer require biigle/ifdo
+```
+
+## Usage
 
 ```php
 use Biigle\Ifdo\Ifdo;
@@ -29,7 +39,7 @@ $obj = Ifdo::fromString('{"some": "json"}', true);
 $obj->toString();
 ```
 
-### Testing
+## Testing
 
 ```bash
 composer test

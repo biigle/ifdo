@@ -1,5 +1,5 @@
 {
-    "name": "biigle/ifdo-parser",
+    "name": "biigle/ifdo",
     "description": "iFDO Parser Package to parse and validate the iFDO JSON Schema",
     "keywords": [
         "biigle",
