@@ -6,7 +6,7 @@
         "ifdo-parser"
     ],
     "homepage": "https://github.com/biigle/ifdo-parser",
-    "license": "GPL-3.0",
+    "license": "GPL-3.0-only",
     "type": "library",
     "authors": [
         {
