@@ -19,7 +19,7 @@ class Ifdo
 
     public static function fromString($data, $strict = false): Ifdo
     {
-        return new Ifdo($data, true);
+        return new Ifdo($data, $strict);
     }
 
     public function __construct($json, $strict = false)
@@ -49,7 +49,7 @@ class Ifdo
         $this->validator = new \JsonSchema\Validator;
         $version         = $this->getIfdoVersion();
         $decoded         = json_decode($this->toString());
-        $this->validator->validate($decoded, (object) ['$ref' => 'file://' . realpath("assets/ifdo-$version.json")]);
+        $this->validator->validate($decoded, (object) ['$ref' => 'file://'.__DIR__."/../assets/ifdo-$version.json"]);
 
         if ($this->getDebug() && ! empty($this->getErrors()))
         {
