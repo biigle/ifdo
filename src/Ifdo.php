@@ -84,27 +84,21 @@ class Ifdo
     public function getImageSetHeader()
     {
         $arr = $this->getJsonData();
-        if (array_key_exists('image-set-header', $arr))
-        {
+        if (is_array($arr) && array_key_exists('image-set-header', $arr)) {
             return $arr['image-set-header'];
         }
-        else
-        {
-            return [];
-        }
+
+        return [];
     }
 
     public function getImageSetItems()
     {
         $arr = $this->getJsonData();
-        if (array_key_exists('image-set-items', $arr))
-        {
+        if (is_array($arr) && array_key_exists('image-set-items', $arr)) {
             return $arr['image-set-items'];
         }
-        else
-        {
-            return [];
-        }
+
+        return [];
     }
 
     public function getIfdoVersion(): String
