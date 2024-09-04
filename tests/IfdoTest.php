@@ -35,4 +35,12 @@ class IfdoTest extends TestCase
         $this->expectException(\Exception::class);
         Ifdo::fromString('{"some": "json"}', true);
     }
+
+    public function testInvalidJson()
+    {
+        $obj = Ifdo::fromString('{"some": "json",}');
+        $this->assertSame(null, $obj->getJsonData());
+        $this->assertSame([], $obj->getImageSetHeader());
+        $this->assertSame([], $obj->getImageSetItems());
+    }
 }
