@@ -287,13 +287,13 @@
                     }
                 },
                 "image-annotation-labels": {
-                    "$ref": "https://marine-imaging.com/fair/schemas/annotation-v2.0.0.json#/properties/image-annotation-labels"
+                    "$ref": "annotation-v2.0.0.json#/properties/image-annotation-labels"
                 },
                 "image-annotation-creators": {
-                    "$ref": "https://marine-imaging.com/fair/schemas/annotation-v2.0.0.json#/properties/image-annotation-creators"
+                    "$ref": "annotation-v2.0.0.json#/properties/image-annotation-creators"
                 },
                 "image-annotations": {
-                    "$ref": "https://marine-imaging.com/fair/schemas/annotation-v2.0.0.json#/properties/image-annotations"
+                    "$ref": "annotation-v2.0.0.json#/properties/image-annotations"
                 },
                 "image-acquisition": {
                     "description": "photo: still images, video: moving images, slide: microscopy images / slide scans",
@@ -719,7 +719,7 @@
                     }
                 },
                 "image-set-provenance": {
-                    "$ref": "https://marine-imaging.com/fair/schemas/provenance-v0.1.0.json"
+                    "$ref": "provenance-v0.1.0.json"
                 }
             }
         },
